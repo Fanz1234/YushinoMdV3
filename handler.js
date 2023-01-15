@@ -30,7 +30,7 @@ export async function handler(chatUpdate) {
     this.pushMessage(chatUpdate.messages).catch(console.error)
     let m = chatUpdate.messages[chatUpdate.messages.length - 1]
     
-    global.img = 'https://telegra.ph/file/e4a2f4339da8a32ad20a1.jpg' 
+    global.img = 'https://telegra.ph/file/e83ba3c272120b6b3ed05.jpg' 
     
     if (!m)
         return

@@ -43,7 +43,16 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
 
 *L O A D I N G. . .*
 `.trim(), m, null, {
-    asDocument: chat.useDocument
+    asDocument: chat.useDocument, mimetype: 'audio/mp4', ptt: false, contextInfo: {
+        externalAdReply: { showAdAttribution: true,
+            title: '▶︎ ━━━━━━━•─────────────── ', 
+            body: 'Now Playing...',
+            description: 'Now Playing...',
+            mediaType: 2,
+          thumbnail: await (await fetch(thumb)).buffer(),
+         mediaUrl: `-`
+        }
+     }
   })
 }
 handler.help = ['mp3', 'a'].map(v => 'yt' + v + ` <url> <without message>`)

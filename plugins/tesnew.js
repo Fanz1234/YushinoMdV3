@@ -20,7 +20,7 @@ let name = conn.getName(m.sender)
     let wita = moment.tz('Asia/Makassar').format('HH:mm:ss')
     let wktuwib = `${wibh} H ${wibm} M ${wibs} S`
     
-let bcbg = 'https://telegra.ph/file/da19d1c4c1e23b8b9c72e.jpg'
+let bcbg = 'https://telegra.ph/file/e83ba3c272120b6b3ed05.jpg'
        await conn.delay(1500)
 const anu = `Apa Itu Bot?\n`
 const footer = wktuwib
@@ -83,7 +83,7 @@ const idbuttons3 = 'wkwk'
     let d5 = 'text/rtf'
     let td = `${pickRandom([d1,d2,d3,d4,d5])}`
   let tes = `kontol`
-conn.sendUrlButton(m.chat, tag, 'Kontol', 'wa.me/6281361281833', 'Tespek', snh, m)
+conn.sendUrlButton(m.chat, tag, 'Kontol', 'wa.me/6285812373011', 'Tespek', snh, m)
 
 }
 handler.command = /^(tesnewplug)$/i

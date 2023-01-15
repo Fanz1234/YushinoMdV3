@@ -83,7 +83,7 @@ const listMessage = {
 
 `
   let buttonMessage= {
-'document':{'url':'https://youtu.be/'},
+'document':{'url':'-'},
 'mimetype':global.ddocx,
 'fileName':'▢━━━━「 Registration 」━━━━▢',
 'fileLength':fsizedoc,

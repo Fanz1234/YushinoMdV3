@@ -4,7 +4,7 @@ import fetch from 'node-fetch'
 
          let pp = fs.readFileSync('./thumbnail.jpg')
          let gc1 = '-'
-         let caption = `*Mʏ Gᴄ Oғғɪᴄɪᴀʟ*`
+         let caption = `-`
          await conn.sendButtonDoc(m.chat, caption, wm, 'Owner', '.owner', m, { contextInfo: { 
              externalAdReply: {
                sourceUrl: `${gc1}`,

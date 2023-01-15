@@ -15,7 +15,7 @@ let flaaa2 = [
 let bcod = `${pickRandom(global.bacot)}`
 let nth = `☰ ━━┉┉┈┈ *Bᴀᴄᴏᴛ* ┈┈┉┉━━ ☰`
 conn.sendButtonImg(m.chat, `${pickRandom(flaaa2)}` + `${ucapan()} ` + `${name}`, nth, '❏ ' + bcod, 'Next', `.bacot`, m, { contextInfo: { externalAdReply: { showAdAttribution: true,
-    mediaUrl: 'https://facebook.com/sadtime098',
+    mediaUrl: '-',
     mediaType: 2, 
     description: sgc,
     title: "Jᴀɴɢᴀɴ Lᴜᴘᴀ Mᴀɴᴅɪ!!",

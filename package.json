@@ -1,7 +1,7 @@
 {
-    "name": "Aldiaisyah",
+    "name": "Fanz",
     "version": "3.0.0",
-    "description": "WhatsApp BOT By Aldi",
+    "description": "WhatsApp BOT By Fanz",
     "main": "index.js",
     "type": "module",
     "directories": {
@@ -24,7 +24,7 @@
     ],
     "homepage": "https://github.com/hyuura-official",
     "author": {
-        "name": "Aldi"
+        "name": "Fanz"
     },
     "repository": {
         "type": "git",

@@ -90,7 +90,7 @@ global.pgopay = '-'
 global.plinkaja = '-' //link aja
 global.ppulsa = '-'
 global.ppulsa2 = '-'
-global.psaweria = '-'
+global.psaweria = 'https://saweria.co/Fanz411'
 
 
 //⫹⫺ ╳╶╼╶╶╶╶┈ ⎝ TAMPILAN ⎞ ┈╴╴╴╴╾╴╳ ⫹⫺

@@ -83,7 +83,7 @@ const listMessage = {
 
 `
   let buttonMessage= {
-'document':{'url':'-'},
+'document':{'url':'https//-/'},
 'mimetype':global.ddocx,
 'fileName':'▢━━━━「 Registration 」━━━━▢',
 'fileLength':fsizedoc,
@@ -92,13 +92,13 @@ const listMessage = {
 'forwardingScore':555,
 'isForwarded':true,
 'externalAdReply':{
-'mediaUrl':'https://youtu.be/',
+'mediaUrl':'https://-/',
 'mediaType':2,
 'previewType':'pdf',
 'title':global.titlebot,
 'body':global.titlebot,
 'thumbnail':await(await fetch('https://telegra.ph/file/e83ba3c272120b6b3ed05.jpg')).buffer(),
-'sourceUrl':'https://youtu.be/'}},
+'sourceUrl':'https://-/'}},
 'caption':cap,
 'footer':botdate,
 'buttons':[

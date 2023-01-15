@@ -15,7 +15,7 @@ let flaaa2 = [
 let cin = await bucin()
 let nth = '❲ *Bᴜᴄɪɴ* ❳'
 conn.sendButtonImg(m.chat, `${pickRandom(flaaa2)}` + `${ucapan()} ` + `${name}`, nth, '❏ ' + cin, 'Next', `.bucin`, m, { contextInfo: { externalAdReply: { showAdAttribution: true,
-    mediaUrl: 'https://facebook.com/sadtime098',
+    mediaUrl: '-',
     mediaType: 2, 
     description: sgc,
     title: "Jᴀɴɢᴀɴ Lᴜᴘᴀ Mᴀɴᴅɪ!!",

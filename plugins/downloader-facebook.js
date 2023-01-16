@@ -1,80 +1,35 @@
 import { facebookdl, facebookdlv2 } from '@bochilteam/scraper'
 import fetch from 'node-fetch'
-import { savefrom } from '@bochilteam/scraper'
-import cheerio from 'cheerio'
-
-let handler = async (m, { conn, args, usedPrefix, command }) => {
+import axios from 'axios'
+let handler = async (m, { conn, usedPrefix, text, args, command }) => {
+let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+let pp = await conn.profilePictureUrl(who).catch(_ => hwaifu.getRandom())
+let name = await conn.getName(who)
 try {
     if (!args[0]) throw `Use example ${usedPrefix}${command} https://fb.watch/azFEBmFRcy/`
-    // let { result } = await facebookdl(args[0])
-    if (!args[1]) return conn.sendButton(m.chat, `*${htki} ғᴀᴄᴇʙᴏᴏᴋ ${htka}*`, null, null, [['sᴅ', `.fb ${args[0]} sd`],['ʜᴅ', `.fb ${args[0]} hd`]],m)
-   let res = await fetch(`https://api.xteam.xyz/dl/fbv2?url=${args[0]}&APIKEY=NezukoTachibana281207`)
-    let { result } = await res.json()
-    
-    let { hd, meta, sd } = result
-    
-    let tpe = "sd"
-  if (args[1] == 'sd') {
-    tpe = sd
-  }
-  if (args[1] == 'hd') {
-    tpe = hd
-  }
-  let { url } = tpe
-  let { duration } = meta
-  let { thumb } = result
-
-conn.reply(m.chat, `ᴅ ᴏ ᴡ ɴ ʟ ᴏ ᴀ ᴅ ɪ ɴ ɢ. . .`, 0, {
-  contextInfo: { mentionedJid: [m.sender],
-    externalAdReply :{
-    mediaUrl: 'https://facebook.com',
-    mediaType: 2,
-    description: wm, 
-    title: '               「🇫」 ғ ᴀ ᴄ ᴇ ʙ ᴏ ᴏ ᴋ',
-    body: wm,
-    thumbnail: await(await fetch(thumb)).buffer(),
-    sourceUrl: sgc
-     }}
-  })
-  conn.sendHydrated(m.chat, ' ', `
-━━━━━•─────────────── ${duration}
-       ⇆ㅤ◁ㅤ ❚❚ㅤ ▷ㅤ↻`, await (await fetch(url)).buffer(), args[0], '🌎 ᴜ ʀ ʟ', null,null, [[null,null],[null,null],[null,null]],m)
-       } catch {
-       if (!args[0]) throw 'Input URL'
-	let res = await facebookDl(args[0]).catch(async _ => await savefrom(args[0])).catch(_ => null)
-	if (!res) throw 'Can\'t download the post'
-	let url = res?.url?.[0]?.url || res?.url?.[1]?.url || res?.['720p'] || res?.['360p']
-	await m.reply('_In progress, please wait..._')
-	conn.sendMessage(m.chat, { video: { url }, caption: res?.meta?.title || '' }, { quoted: m })
+    const { result } = await facebookdl(args[0]).catch(async _ => await facebookdlv2(args[0]))
+    for (const { url, isVideo } of result.reverse()) conn.sendFile(m.chat, url, `facebook.${!isVideo ? 'bin' : 'mp4'}`, `🔗 *Url:* ${url}`, m)
+    } catch {
+if (!text) throw '*Masukkan link*\n Example: https://www.facebook.com/DramaFacbook21/videos/1775049149358700/?app=fbl'
+let res = await axios('https://violetics.pw/api/downloader/facebook?apikey=beta&url=' + text)
+let json = res.data
+let dapet = json.result.url
+	let row = Object.values(dapet).map((v, index) => ({
+		title: htjava + '📌 Quality: ' + v.subname,
+		description: '\n⌚ ID: ' + json.result.id + '\n⏲️ Title: ' + json.result.meta.title + '\n📎 URL: ' + v.url + '\n📌 Source: ' + json.result.meta.source + '\n👁️ Views: ' + json.result.meta.duration + '\n📌 SD: ' + json.result.sd.url + '\n\n📌 HD: ' + json.result.hd.url,
+		rowId: usedPrefix + 'get ' + v.url
+	}))
+	let button = {
+		buttonText: `☂️ ${command} Search Disini ☂️`,
+		description: `⚡ Hai ${name}, Silakan pilih ${command} Search di tombol di bawah...\n*Teks yang anda kirim:* ${text}\n\nKetik ulang *${usedPrefix + command}* teks anda untuk mengubah teks lagi`,
+		footerText: wm
+	}
+	return conn.sendListM(m.chat, button, row, m)
+    }
 }
-       
-}
-handler.help = ['facebbok'].map(v => v + ' <url>')
+handler.help = ['facebook'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 
-handler.command = /^((facebook|fb)(downloder|dl)?)$/i
+handler.command = /^f(acebook(d(own(load(er)?)?|l))?|b(d(own(load(er)?)?|l))?)$/i
 
 export default handler
-
-async function facebookDl(url) {
-	let res = await fetch('https://fdownloader.net/')
-	let $ = cheerio.load(await res.text())
-	let token = $('input[name="__RequestVerificationToken"]').attr('value')
-	let json = await (await fetch('https://fdownloader.net/api/ajaxSearch', {
-		method: 'post',
-		headers: {
-			cookie: res.headers.get('set-cookie'),
-			'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-			referer: 'https://fdownloader.net/'
-		},
-		body: new URLSearchParams(Object.entries({ __RequestVerificationToken: token, q: url }))
-	})).json()
-	let $$ = cheerio.load(json.data)
-	let result = {}
-	$$('.button.is-success.is-small.download-link-fb').each(function () {
-		let quality = $$(this).attr('title').split(' ')[1]
-		let link = $$(this).attr('href')
-		if (link) result[quality] = link
-	})
-	return result
-}

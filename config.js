@@ -230,7 +230,7 @@ global.APIs = { // API Prefix
   violetics : 'https://violetics.pw',
   ziy : 'https://ziy.herokuapp.com',
   males : 'https://malesin.xyz',
-  bearr : 'https://saipulanuar.ga',
+  bear : 'https://saipulanuar.ga',
   pasha : 'https://api.nataganz.com'
 }
 

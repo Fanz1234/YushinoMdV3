@@ -230,7 +230,7 @@ global.APIs = { // API Prefix
   violetics : 'https://violetics.pw',
   ziy : 'https://ziy.herokuapp.com',
   males : 'https://malesin.xyz',
-  bear : 'https://api.lolhuman.xyz': 'apikeylu',
+  bear : 'https://api.zeeoneofc.xyz',
   pasha : 'https://api.nataganz.com'
 }
 
@@ -251,7 +251,8 @@ global.APIKeys = { // APIKey Here
   'https://hardianto.xyz': 'hardianto',
   'https://violetics.pw': 'beta',
   'https://ziy.herokuapp.com' : 'xZiyy',
-  'https://api.nataganz.com' : 'Pasha'
+  'https://api.nataganz.com' : 'Pasha',
+  'https://api.zeeoneofc.xyz' : '2GLx5gnf'
 }
 //⳹ NOTE !! EXAMPLE ➢ 'https://WebsiteApi': 'Apikey'
 

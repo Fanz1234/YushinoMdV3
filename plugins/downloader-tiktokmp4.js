@@ -1,9 +1,14 @@
 import axios from 'axios'
 let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (!args[0]) throw `contoh:\n ${usedPrefix}${command} https://www.tiktok.com/@omagadsus/video/7025456384175017243`
-    let res = (await axios.get(API('bear', '/tiktok', { url: args[0] } ))).data;
-    if (res.status != 200) throw res.message;
-    if (!res) throw res.message;
+    let bear = '9b95802c6f20'
+  let bearr = 'danzz'
+  let url = await fetch(`https://saipulanuar.ga/api/download/tiktok?apikey=${bearr}&url=${args[0]}`)
+  let json = await url.json()
+    if (url.status !== 200) throw await url.text()
+    if (!json.status) throw json
+  let txt = `🚀 *Link:* ${await (await axios.get(`https://tinyurl.com/api-create.php?url=${args[0]}`)).data}`
+  await conn.sendFile(m.chat, json.result.audio, 'tiktokaudio.mp3', `
     
     let result = `⟐⟞⟚⟝⟮ *Title:* ⟯⟞⟚⟝⟐
 ┇⟣⟪ ${res.title} ⟫⟢

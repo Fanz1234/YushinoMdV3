@@ -230,7 +230,7 @@ global.APIs = { // API Prefix
   violetics : 'https://violetics.pw',
   ziy : 'https://ziy.herokuapp.com',
   males : 'https://malesin.xyz',
-  bear : 'https://api.zeeoneofc.xyz/api/downloader/tiktok?url=https://vt.tiktok.com/ZS86JauHm/&apikey=2GLx5gnf',
+  bear : 'https://saipulanuar.ga',
   pasha : 'https://api.nataganz.com'
 }
 

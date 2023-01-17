@@ -207,7 +207,7 @@ global.rpg = {
 
 
 //⫹⫺ ╳╶╼╶╶╶╶┈ ⎝ WEBSITE APIKEY ⎞ ┈╴╴╴╴╾╴╳ ⫹⫺
-global.zenzkey = 'b8040941f7'
+global.bear = 'VBkM7rbU'
 global.lolkey = '8e66d0934cf741bfd2182c16' // PUNYA WAHID 357d3c85079c4e0818731e6b
 global.APIs = { // API Prefix
   // name: 'https://website'
@@ -219,6 +219,7 @@ global.APIs = { // API Prefix
   dhnjing: 'https://dhnjing.xyz',
   neoxr: 'https://neoxr-api.herokuapp.com',
   zeks: 'https://api.zeks.me',
+  bear: 'https://saipulanuar.ga',
   pencarikode: 'https://pencarikode.xyz',
   ana: 'https://anabotofc.herokuapp.com/',
   amel: 'https://melcanz.com',
@@ -228,7 +229,7 @@ global.APIs = { // API Prefix
   kanx: 'https://kannxapi.herokuapp.com/', 
   violetics : 'https://violetics.pw',
   ziy : 'https://ziy.herokuapp.com',
-  males : 'https://saipulanuar.ga',
+  bear : 'https://saipulanuar.ga',
   pasha : 'https://api.nataganz.com'
 }
 
